@@ -6,18 +6,19 @@
     @if (Session::has('success'))
         <p class="alert alert-success">{{ Session::get('success') }}</p><br />
     @endif
+    <a class="btn btn-info" href="{{ url('pegawai/create') }}">Tambah</a>
     <br />
-    <form method="GET" action="{{ url('pegawai') }}">
+    {{-- <form method="GET" action="{{ url('pegawai') }}">
         <input type="text" name="keyword" value="{{ $keyword }}" />
         <button type="submit">Search</button>
-    </form>
+    </form> --}}
     <table class="table-bordered table">
         <tr class="text-center">
             {{-- <th>Foto Profile</th> --}}
             <th>Nama</th>
             <th>Tanggal Lahir</th>
-            <th>Gelar</th>
-            <th>NIP</th>
+            <th>Jurusan</th>
+            <th>NIM</th>
             <th colspan="2">AKSI</th>
         </tr>
         @foreach ($datas as $key => $value)
@@ -31,8 +32,7 @@
                 <td>{{ $value->tanggal_lahir }}</td>
                 <td>{{ $value->gelar }}</td>
                 <td>{{ $value->nip }}</td>
-                <td class="text-center"><a class="btn btn-info"
-                        href="{{ url('pegawai/' . $value->id . '/edit') }}">Update</a>
+                <td class="text-center"><a class="btn btn-info" href="{{ url('pegawai/' . $value->id . '/edit') }}">Update</a>
                 </td>
                 <td class="text-center">
                     <form action="{{ url('pegawai/' . $value->id) }}" method="POST">
@@ -44,6 +44,5 @@
             </tr>
         @endforeach
     </table>
-    <a class="btn btn-info" href="{{ url('pegawai/create') }}">Tambah</a>
     {{ $datas->links() }}
 @endsection

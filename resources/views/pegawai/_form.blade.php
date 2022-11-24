@@ -21,7 +21,7 @@
 </div>
 
 <div class="form-group">
-    <div class="col-md-6">Gelar</div>
+    <div class="col-md-6">Jurusan</div>
 
     <div class="col-md-6">
         <input class="form-control" type="text" name="gelar" value="{{ $model->gelar }}">
@@ -32,7 +32,7 @@
 </div>
 
 <div class="form-group">
-    <div class="col-md-6">NIP</div>
+    <div class="col-md-6">NIM</div>
 
     <div class="col-md-6">
         <input class="form-control" type="text" name="nip" value="{{ $model->nip }}">
